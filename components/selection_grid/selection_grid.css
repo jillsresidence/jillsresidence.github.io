@@ -1,0 +1,29 @@
+/***** selection grid *****/
+.selection-grid{
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.selection-grid-content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100px;
+}
+
+.selection-grid-previous{
+	margin-right: -5px;
+}
+
+.selection-grid-next{
+	margin-left: -5px;
+}
+
+.grid-option{
+	padding: 2px 5px;
+}

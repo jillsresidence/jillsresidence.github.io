@@ -1,0 +1,52 @@
+
+/*----- calendar -----*/
+.calendar{
+	display: inline-block;
+	padding: 0.5rem;
+	cursor: default;
+	min-width: 308px;
+}
+
+.calendar table{
+	border-spacing: 0;
+}
+
+.calendar th{
+	text-align: center;
+	width: 3rem;
+	font-weight: normal;
+	padding: 0.5rem;
+}
+
+.calendar td{
+	text-align: center;
+}
+
+.current-date{
+	border: 1px solid lightgray;
+}
+
+.selected-start-date{
+	background-color: lightblue;
+}
+
+.selected-end-date{
+	background-color: lightcyan;
+}
+
+.included-date{
+	background-color: lightcoral;
+}
+
+.month-title{
+	font-size: 0.7rem;
+	border-bottom: 1px solid aliceblue;
+	padding-bottom: 2px;
+}
+
+/*
+.available-cell{
+	.font-weight: bold;
+}
+*/
+

@@ -1,0 +1,42 @@
+/*----- calendar icon -----*/
+calendar-icon-component{
+	width: 50%;
+}
+
+.calendar-icon{
+	display: inline-block;
+	padding: 0.2rem;
+	cursor: default;	
+	font-size: 0.5rem;
+	width: 2.7rem;
+}
+
+.calendar-icon > div:nth-child(1){
+	border: 3px solid lightblue;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.calendar-icon .binder-wires{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+}
+
+.calendar-icon .binder-wires span{
+	border: 1px solid blue;
+	margin: 0 3px 1px 3px;
+}
+
+.calendar-icon .month-display{
+	text-align: center;
+	padding: 0 0.5rem 0.2rem 0.5rem;
+	color: lightblue;
+	border-bottom: 1px dotted blue;
+}
+
+.calendar-icon .date-display{
+	text-align: center;
+	font-size: 0.6rem;
+}

@@ -1,0 +1,94 @@
+/*----- fonts -----*/
+
+@font-face {
+  font-family: Alata;
+  font-style: normal;
+  src: url('fonts/alata-v1-latin/alata-v1-latin-regular.woff') format('woff') /* Modern Browsers */
+}	
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 100;
+  src: url('fonts/roboto-v20-latin/roboto-v20-latin-regular.woff') format('woff') /* Modern Browsers */
+}			
+
+/*----- Reset -----*/
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	overflow-x: hidden;
+}
+
+body > header, body > main, body > footer {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.start-end-calendar-container {
+	display: flex;
+	flex-wrap: nowrap;
+
+}
+
+.start-end-calendar-container > div {
+	flex-grow: 1;
+
+	display: flex;
+	border: 1px solid lightblue;
+	align-items: center;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.modal-calendars-container{
+	position: absolute;
+	z-index: 100;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+	
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+	
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/*----- Common -----*/
+
+.panel{
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0px 3px 5px -2px gray, 0px -1px 3px -3px gray; 			
+}
+
+/*----- Custom elements -----*/
+
+.selection-grid-variables{
+	--width: 100px;
+}
+
+
