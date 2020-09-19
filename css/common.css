@@ -60,6 +60,42 @@ body > header, body > main, body > footer {
 	flex-wrap: wrap;
 }
 
+#calendarNavigation {
+	display: flex;
+	justify-content: space-between;
+}
+
+#calendarNavigation button {
+	background-color: transparent;
+	border: 0;
+	width: 50%;
+}
+
+#btnCalendarPrev::before {
+	content: " ";
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	margin-right: 5px;
+	background-color: transparent;	
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+
+#btnCalendarNext::after {
+	content: " ";
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	margin-left: 5px;
+	background-color: transparent;	
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {

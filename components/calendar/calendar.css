@@ -39,9 +39,17 @@
 }
 
 .month-title{
-	font-size: 0.7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 0.9rem;
 	border-bottom: 1px solid aliceblue;
 	padding-bottom: 2px;
+}
+
+.month-title span {
+	margin: 0 3px;
 }
 
 /*
