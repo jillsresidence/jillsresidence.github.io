@@ -6,6 +6,7 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<link rel="stylesheet" type="text/css" href="components/calendar/calendar.css">
+	<link rel="stylesheet" type="text/css" href="components/calendar_carousel/calendar_carousel.css">
 	<link rel="stylesheet" type="text/css" href="components/calendar_icon/calendar_icon.css">
 	<link rel="stylesheet" type="text/css" href="components/selection_grid/selection_grid.css">
 	<link rel="stylesheet" type="text/css" href="css/modal_calendars.css">
@@ -16,12 +17,13 @@
 	<script  src="js/date_extension.js"></script>
 	<script  src="components/calendar/calendar.js"></script>
 	<script  src="components/calendar_icon/calendar_icon.js"></script>
-	<script  src="components/selection_grid/selection_grid.js"></script>
+	<script src="components/calendar_carousel/calendar_carousel.js"></script>
+	<!--<script  src="components/selection_grid/selection_grid.js"></script>-->
 	
 </head>
 <body>
 
-	<header>This is the header</header>
+	<header>Jill's Residence Tagaytay</header>
 
 	<main>
 			<section class="start-end-calendar-container" ><!-- calendar_controller-->
@@ -34,16 +36,28 @@
 					<span id="checkOutSelect">Check Out</span>
 				</div>
 			</section>
-			
-			<div id="calendarNavigation">
-				<button id="btnCalendarPrev">Previous</button>
-				<button id="btnCalendarNext">Next</button>
+
+			<div id="modalBackground" class="hidden">&nbsp;</div>
+			<div id="modalCalendarsContainer" class="hidden">
+
+				<div id="calendarNavigation">
+					<button id="btnCalendarPrev">Previous</button>
+					<button id="btnCalendarNext">Next</button>
+				</div>
+
+				<section class="modal-calendars">
+					<calendar-component id="calStart" class="calendar panel"></calendar-component>
+					<calendar-component id="calEnd" class="calendar panel"></calendar-component>
+				</section>
 			</div>
 
-			<section id="modalCalendarsContainer" class="modal-calendars-container hidden">
-				<calendar-component id="calStart" class="calendar panel"></calendar-component>
-				<calendar-component id="calEnd" class="calendar panel"></calendar-component>
+			<calendar-carousel-component></calendar-carousel-component>
+
+			<!--
+			<section class="rooms">
+				<header>Available Rooms</header>
 			</section>
+			-->
 		
 	</main>
 	<footer></footer>
@@ -51,6 +65,19 @@
 	<!-- <script src="controllers/modal_controller.js"></script> -->
 	<script src="controllers/calendar_controller.js"></script>
 	<script src="js/postscript.js"></script>
+
+	<!-- this script block is just for testing purposes -->
+	<script>
+		'use strict';
+		/*****/
+		let cal = document.createElement('calendar-component');
+		cal.shouldRender = false;
+		document.body.appendChild(cal);
+		cal.year = 2021;
+		cal.shouldRender = true;
+		cal.month = MONTHS.JAN;
+		/*****/
+	</script>
 
 </body>
 </html>

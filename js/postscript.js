@@ -20,6 +20,7 @@
         ,checkInSelect: d.getElementById('checkInSelect')
         ,checkOutSelect: d.getElementById('checkOutSelect')
         ,modalCalendarsContainer: d.getElementById('modalCalendarsContainer')
+        ,modalBackground: d.getElementById('modalBackground')
         ,checkInContainer: d.getElementById('checkInContainer')
         ,checkOutContainer: d.getElementById('checkOutContainer')
     });

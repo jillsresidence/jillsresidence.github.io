@@ -17,6 +17,8 @@ window.hotelres.calendarController = (function(){
     let _checkOutSelect;
     let _checkInContainer;
     let _checkOutContainer;
+    let _modalBackground;
+    let _modalCalendarsContainer;
 
     //----- dependencies -----
 
@@ -93,10 +95,12 @@ window.hotelres.calendarController = (function(){
     }
 
     function _showModalCalendars() {
+        _modalBackground.classList.remove('hidden');
         _modalCalendarsContainer.classList.remove('hidden');
     }
 
     function _hideModalCalendars() {
+        _modalBackground.classList.add('hidden');
         _modalCalendarsContainer.classList.add('hidden');
     }
 
@@ -138,6 +142,7 @@ window.hotelres.calendarController = (function(){
         _checkInContainer = els.checkInContainer;
         _checkOutContainer = els.checkOutContainer;
         _modalCalendarsContainer = els.modalCalendarsContainer;
+        _modalBackground = els.modalBackground;
 
         _initModalCalendars();
         _initCalendarIcons();

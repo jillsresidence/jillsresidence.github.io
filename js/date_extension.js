@@ -27,3 +27,36 @@ Object.defineProperty(Date.prototype, 'getFirstDayOfMonth', {
 	,writable: true
 	,configurable: true
 });
+
+Object.defineProperty(Date.prototype, 'isCurrentMonth', {
+	value: function(){
+		let now = new Date();
+		return this.getMonth() === now.getMonth() && this.getFullYear() === now.getFullYear();
+	}
+	,writable: true
+	,configurable: true
+});
+
+Object.defineProperty(Date.prototype, 'nextMonth', {
+	value: function() {
+		let dte = new Date(this.getFullYear(), this.getMonth(), this.getDate(), 
+		this.getHours(), this.getMinutes(), this.getSeconds(), this.getMilliseconds());
+
+		dte.setMonth(dte.getMonth() + 1);
+		return dte;
+	}
+	,writable: true
+	,configurable: true
+});
+
+Object.defineProperty(Date.prototype, 'previousMonth', {
+	value: function() {
+		let dte = new Date(this.getFullYear(), this.getMonth(), this.getDate(), 
+		this.getHours(), this.getMinutes(), this.getSeconds(), this.getMilliseconds());
+
+		dte.setMonth(dte.getMonth() - 1);
+		return dte;
+	}
+	,writable: true
+	,configurable: true
+});

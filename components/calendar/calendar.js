@@ -28,6 +28,7 @@
 
 	class Calendar extends HTMLElement{
 	
+
 		constructor(){
 			super();
 			
@@ -43,6 +44,8 @@
 			this._settings = {
 				shouldRender: true
 			};
+
+			this._state = {};
 		}
 		
 		connectedCallback(){
@@ -59,7 +62,7 @@
 		//----- private methods -----
 		
 		_init(val){
-			this._initCss();	
+			this._initCss();
 			this._initState(val);
 			
 			this._selectStartDate(this._state.selectedStartDate);
@@ -149,6 +152,8 @@
 			let lastDateOfMonth = dte.getDaysCount();
 			
 			let tbl = this.querySelector('table');
+			if( ! tbl) return;
+
 			let tableRows = tbl.querySelector('tbody').children;
 			let firstWeekRow = 0; 
 			let rowCount = 6;
@@ -199,7 +204,11 @@
 		
 		_addEventListeners(){
 			this._boundOnClick = this._onClick.bind(this);
-			this.querySelector('tbody').addEventListener('click', this._boundOnClick);
+			let tbody = this.querySelector('tbody');
+			if(tbody) {
+				tbody.addEventListener('click', this._boundOnClick);
+			}
+			
 		}
 
 		_selectDate(val){
@@ -238,9 +247,10 @@
 		_updateMonthTitle(){
 			let monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 			let monthTitle = this.querySelector('.month-title');
-			monthTitle.children[0].innerText = monthName[this._state.month];
-			monthTitle.children[1].innerText = this._state.year;
-			
+			if(monthTitle) {
+				monthTitle.children[0].innerText = monthName[this._state.month];
+				monthTitle.children[1].innerText = this._state.year;
+			}
 		}
 
 		_selectStartDate(val){
@@ -322,7 +332,10 @@
 		}
 		
 		_removeEventListeners(){
-			this.querySelector('tbody').removeEventListener('click', this._boundOnClick);
+			let tbody = this.querySelector('tbody');
+			if(tbody) {
+				tbody.removeEventListener('click', this._boundOnClick);
+			}
 		}
 		
 		_whichTableRow(monthStartsAt, dte){
